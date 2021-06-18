@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package pl.grandys.protobufavro;
+
+message Email {
+    required string tenant = 1;
+    required string to = 2;
+    required string content = 3;
+    repeated Attachment attachments = 4;
+}
+
+message Attachment {
+    required string name = 1;
+    required bytes content = 2;
+}

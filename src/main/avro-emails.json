@@ -1,0 +1,40 @@
+{
+  "type": "record",
+  "name": "Email",
+  "namespace": "pl.grandys.protobufavro",
+  "fields": [
+    {
+      "name": "tenant",
+      "type": "string"
+    },
+    {
+      "name": "to",
+      "type": "string"
+    },
+    {
+      "name": "content",
+      "type": "string"
+    },
+    {
+      "name": "attachments",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "AttachmentAvro",
+          "namespace": "pl.grandys.protobufavro.example.email.avro.AvroProtobufSerializer",
+          "fields": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "content",
+              "type": "bytes"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
