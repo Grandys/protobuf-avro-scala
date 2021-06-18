@@ -2,7 +2,7 @@ package pl.grandys.protobufavro.example
 
 import com.typesafe.scalalogging.StrictLogging
 import pl.grandys.protobufavro.example.email._
-import pl.grandys.protobufavro.example.email.avro.AvroProtobufEmailSerializer$
+import pl.grandys.protobufavro.example.email.avro.AvroEmailSerializer
 
 import java.nio.file.Paths
 import java.util.{Timer, TimerTask}
@@ -11,7 +11,7 @@ object Main extends App with StrictLogging {
 
   val email = Email.generate
 
-  implicit val emailSerializer: EmailSerializer = AvroProtobufEmailSerializer$
+  implicit val emailSerializer: EmailSerializer = AvroEmailSerializer
 
   val sender = new EmailHandler(
     Paths.get(getClass.getClassLoader.getResource("").toURI)

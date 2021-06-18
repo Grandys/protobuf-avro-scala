@@ -2,12 +2,9 @@ package pl.grandys.protobufavro.example.email
 package profobuf
 
 import com.google.protobuf.ByteString
-import pl.grandys.protobufavro.emails.{
-  Attachment => ProtoAttachment,
-  Email => ProtoEmail
-}
+import pl.grandys.protobufavro.emails.{Attachment => ProtoAttachment, Email => ProtoEmail}
 
-object ProtobufEmailEmailSerializer$ extends EmailSerializer {
+object ProtobufEmailSerializer extends EmailSerializer {
 
   override def serialize(in: Email): Array[Byte] = {
     ProtoEmail(

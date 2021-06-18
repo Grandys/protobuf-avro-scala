@@ -5,7 +5,7 @@ import com.sksamuel.avro4s._
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 
-object AvroProtobufEmailSerializer$ extends EmailSerializer {
+object AvroEmailSerializer extends EmailSerializer {
 
   private val schema = AvroSchema[EmailAvro]
 
